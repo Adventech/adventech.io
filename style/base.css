@@ -1,7 +1,33 @@
-html, body, button {
+* {
     font-family: 'Lato', serif !important;
 }
 
-.subtitle {
-    margin-top: 20px !important;
+.navbar-collapse .btn-outline-primary {
+    border-radius: 20px;
+    border-width: 2px;
+}
+
+
+.header {
+    border-bottom: 1px solid #E8E9EB;
+}
+
+h1 {
+    font-weight: 900 !important;
+}
+
+.adventech-hero-title {
+    font-weight: 900;
+    font-size: 45px;
+}
+
+.adventech-paragraph {
+    font-size: 22px;
+    color: #4A4A4A;
+    font-weight: 300;
+}
+
+.adventech-hero-cta {
+    border-radius: 25px !important;
+    box-shadow: 0 20px 30px 0 rgba(0,0,0,0.20);
 }
