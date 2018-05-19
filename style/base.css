@@ -31,3 +31,12 @@ h1 {
     border-radius: 25px !important;
     box-shadow: 0 20px 30px 0 rgba(0,0,0,0.20);
 }
+
+.adventech-download-link {
+    transition: 250ms all ease-in-out;
+}
+
+.adventech-download-link:hover {
+    box-shadow: 0 20px 30px 0 rgba(0,0,0,0.20);
+    transform: scale(1.038);
+}
