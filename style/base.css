@@ -2,11 +2,10 @@
     font-family: 'Lato', serif !important;
 }
 
-.navbar-collapse .btn-outline-primary {
+.navbar-collapse .btn-outline-primary, .navbar-collapse .btn-outline-secondary {
     border-radius: 20px;
     border-width: 2px;
 }
-
 
 .header {
     border-bottom: 1px solid #E8E9EB;

@@ -45,12 +45,15 @@
                     <li class="nav-item active mx-auto my-1">
                         <a class="nav-link" href="/about/"><strong>About</strong></a>
                     </li>
-                    <li class="nav-item active mx-auto my-1">
+                    <li class="nav-item active mx-auto  my-1">
                         <a class="nav-link" href="/sabbath-school/"><strong>Sabbath School</strong></a>
                     </li>
                 </ul>
                 <div class="text-center my-2">
-                    <a href="https://github.com/Adventech" class="btn btn-outline-primary" role="button" target="_blank"> ♥ Contribute</a>
+                    <a href="https://github.com/Adventech" class="btn btn-outline-secondary mr-2" role="button" target="_blank">🐙 GitHub</a>
+                </div>
+                <div class="text-center my-2">
+                    <a href="/donate/" class="btn btn-outline-primary" role="button"> ♥ Contribute</a>
                 </div>
             </div>
         </nav>
@@ -90,7 +93,126 @@
         </div>
     </div>
 
-    <div class="my-5 py-5 p-4 p-md-3">
+    <div class="my-lg-5 py-5 p-4 p-md-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <h1>Donate to support our development</h1>
+
+                    <p class="adventech-paragraph my-3">We have many ideas and many projects that we want to embark on, as well as supporting existing projects like Sabbath School app. To date, we have seen an incredible <span class="text-primary">growth</span> of the application with a lot of usage, feedback, value and most importantly service that it provides to our users. We want to continue adding new features and functionality to make it even a
+                        <span class="text-primary">better</span> application. For example this year we plan to add <span class="text-primary">audio / video</span> support for Sabbath School app.</p>
+
+                    <p class="adventech-paragraph my-3">
+                        We are humbled that many of you have <span class="text-primary">offered</span> to donate to our ministry and it is truly motivating to be working with all of you.
+                    </p>
+
+                    <p class="adventech-paragraph my-3">
+                        Click <a href="/donate/">here</a> to learn more about our expenses
+                    </p>
+                </div>
+                <div class="col-5">
+                    <div id="error-message"></div>
+                    <div id="thank-you" class="thank-you">
+                        <h3 class="text-primary">Thank you</h3>
+                        <p class="adventech-paragraph my-3">
+                            For being so awesome!
+                        </p>
+                    </div>
+
+                    <script>
+                        (function(){
+                            if (window.location.href.indexOf("?thank-you") > 0){
+                                document.getElementById('thank-you').classList.add('thank-you-visible');
+                            }
+                        })();
+                    </script>
+
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="py-3 adventech-donate-button"
+                                 id="sku_HDCxnnJ6UafLgj">
+                                <p class="amount">$10</p>
+                                <p class="small text-secondary">One-time donation</p>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="py-3 adventech-donate-button"
+                                 id="sku_HDD1QqLPhevtqE">
+                                <p class="amount">$25</p>
+                                <p class="small text-secondary">One-time donation</p>
+                            </div>
+                        </div>
+                        <div class="col-5 mt-4">
+                            <div class="py-3 adventech-donate-button"
+                                 id="sku_HDD1RZzsh403uM">
+                                <p class="amount">$50</p>
+                                <p class="small text-secondary">One-time donation</p>
+                            </div>
+                        </div>
+                        <div class="col-5 mt-4">
+                            <div class="py-3 adventech-donate-button"
+                                 id="sku_HDD2PYMCgf5lTI">
+                                <p class="amount">$100</p>
+                                <p class="small text-secondary">One-time donation</p>
+                            </div>
+                        </div>
+                        <div class="col-5 mt-4">
+                            <div class="py-3 adventech-donate-button"
+                                 id="plan_HDD3ukXRzJUB46">
+                                <p class="amount">$10</p>
+                                <p class="small text-secondary"><strong class="text-primary">Monthly</strong> donation</p>
+                            </div>
+                        </div>
+                        <div class="col-5 mt-4">
+                            <div class="py-3 adventech-donate-button"
+                                 id="plan_HDE8TKrHo5jzpn">
+                                <p class="amount">$25</p>
+                                <p class="small text-secondary"><strong class="text-primary">Monthly</strong> donation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        (function() {
+                            var stripe = Stripe('pk_live_DLK9BZOJyv60jyy5ZaRfbuIf00oVk0q1nT');
+                            var checkoutButtons = document.getElementsByClassName('adventech-donate-button');
+
+                            for (var i = 0; i < checkoutButtons.length; i++) {
+                                var checkoutButton = checkoutButtons[i];
+                                checkoutButton.addEventListener('click', function () {
+                                    var sku = this.getAttribute("id");
+                                    // When the customer clicks on the button, redirect
+                                    // them to Checkout.
+
+                                    var item = {quantity: 1};
+
+                                    if (sku.indexOf("sku") === 0) {
+                                        item.sku = sku
+                                    } else {
+                                        item.plan = sku
+                                    }
+
+                                    stripe.redirectToCheckout({
+                                        items: [item],
+                                        successUrl: 'https://adventech.io/donate/?thank-you',
+                                        cancelUrl: 'https://adventech.io/donate/',
+                                    })
+                                      .then(function (result) {
+                                          if (result.error) {
+                                              var displayError = document.getElementById('error-message');
+                                              displayError.textContent = result.error.message;
+                                          }
+                                      });
+                                });
+                            }
+                        })();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-light my-5 py-5 p-4 p-md-3">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
