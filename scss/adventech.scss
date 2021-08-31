@@ -7,3 +7,29 @@ $theme-colors: (
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 $link-color: theme-color("primary");
+
+.adventech-donate-button {
+  border-radius: 5px;
+  cursor: pointer;
+  background: #efecf9;
+  transition: all ease .5s;
+  &:hover {
+    background: #e2ffeb;
+    .amount {
+      color: #21D368;
+    }
+  }
+  text-align: center;
+  .amount {
+    transition: all ease .5s;
+    color: #b1aebb;
+    font-size: 50px;
+  }
+}
+
+.thank-you {
+  display: none;
+  &-visible {
+    display: block;
+  }
+}

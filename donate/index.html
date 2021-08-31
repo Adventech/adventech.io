@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Adventech - Donate & Support</title>
+
+  <meta name="description" content="Adventech ministry. Our mission is to share the Gospel of Jesus Christ through technology.">
+
+  <meta itemprop="name" content="Adventech">
+  <meta itemprop="description" content="Adventech ministry. Our mission is to share the Gospel of Jesus Christ through technology.">
+
+  <meta name="og:title" content="Adventech">
+  <meta name="og:description" content="Help support Adventech with your donation">
+  <meta name="og:image" content="https://adventech.io/images/adventech-graph-image.png">
+  <meta name="og:url" content="https://adventech.io">
+  <meta name="og:site_name" content="Adventech - Technology to spread the Gospel">
+  <meta name="og:type" content="website">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="theme-color" content="#000">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="/style/base.css">
+  <link rel="stylesheet" href="/style/main.css">
+  <script src="https://js.stripe.com/v3"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <nav class="navbar navbar-sm navbar-expand-md navbar-expand-lg navbar-light">
+      <a class="navbar-brand m-auto" href="/">
+        <img src="/images/adventech-menu-logo.png" />
+      </a>
+
+      <div class="navbar-collapse ml-4 center">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active mx-auto my-1">
+            <a class="nav-link" href="/about/"><strong>About</strong></a>
+          </li>
+          <li class="nav-item active mx-auto  my-1">
+            <a class="nav-link" href="/sabbath-school/"><strong>Sabbath School</strong></a>
+          </li>
+        </ul>
+        <div class="text-center my-2">
+          <a href="https://github.com/Adventech" class="btn btn-outline-secondary mr-2" role="button" target="_blank">🐙 GitHub</a>
+        </div>
+        <div class="text-center my-2">
+          <a href="/donate/" class="btn btn-outline-primary" role="button"> ♥ Contribute</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main role="main">
+
+  <div class="my-lg-5 py-5 p-4 p-md-3">
+    <div class="container">
+      <h1 class="mb-5">Donate to support our development</h1>
+      <div class="row">
+        <div class="col-md-6 col-lg-7 order-2 order-md-1">
+          <p class="adventech-paragraph my-3">Our mission is to unite Seventh-day Adventist Church, proclaim Good News to this world by means of technology and witness Jesus’ second coming!</p>
+
+          <p class="adventech-paragraph my-3">We have many ideas and many projects that we want to embark on, as well as supporting existing projects like Sabbath School app. To date, we have seen an incredible <span class="text-primary">growth</span> of the application with a lot of usage, feedback, value and most importantly service that it provides to our users. We want to continue adding new features and functionality to make it even a
+            <span class="text-primary">better</span> application. For example this year we plan to add <span class="text-primary">audio / video</span> support for Sabbath School app.</p>
+
+          <p class="adventech-paragraph my-3">
+            We are humbled that many of you have <span class="text-primary">offered</span> to donate to our ministry and it is truly motivating to be working with all of you.
+          </p>
+
+          <p class="adventech-paragraph my-3">
+            We would like to be as transparent as possible with what we are going to do with donations. Below you can see our current expenses (estimated) and how we are thinking to use donations to cover them
+          </p>
+
+          <table class="table table-bordered mt-5">
+            <tr>
+              <th>Type</th>
+              <th>Cost</th>
+            </tr>
+            <tr>
+              <td>Firebase</td>
+              <td>~$200 USD / month</td>
+            </tr>
+            <tr>
+              <td>Amazon Web Services</td>
+              <td>~$250 USD / month</td>
+            </tr>
+            <tr>
+              <td>Estimated <strong>future</strong> Audio / video feature for the Sabbath School app</td>
+              <td>~$400 USD / month</td>
+            </tr>
+            <tr>
+              <td>Other expenses</td>
+              <td>~$100 USD / month</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6 col-lg-5 order-1 order-md-2">
+          <div id="error-message"></div>
+          <div id="thank-you" class="thank-you">
+            <h3 class="text-primary">Thank you</h3>
+            <p class="adventech-paragraph my-3">
+              For being so awesome!
+            </p>
+          </div>
+
+          <script>
+            (function(){
+              if (window.location.href.indexOf("?thank-you") > 0){
+                document.getElementById('thank-you').classList.add('thank-you-visible');
+              }
+            })();
+          </script>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="py-3 adventech-donate-button"
+                   id="sku_HDCxnnJ6UafLgj">
+                <p><span class="amount">$10</span> <span class="small text-secondary">USD</span></p>
+                <p class="small text-secondary">One-time donation</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="py-3 adventech-donate-button"
+                   id="sku_HDD1QqLPhevtqE">
+                <p><span class="amount">$25</span><span class="small text-secondary">USD</span></p>
+                <p class="small text-secondary">One-time donation</p>
+              </div>
+            </div>
+            <div class="col-6 mt-4">
+              <div class="py-3 adventech-donate-button"
+                   id="sku_HDD1RZzsh403uM">
+                <p><span class="amount">$50</span><span class="small text-secondary">USD</span></p>
+                <p class="small text-secondary">One-time donation</p>
+              </div>
+            </div>
+            <div class="col-6 mt-4">
+              <div class="py-3 adventech-donate-button"
+                   id="sku_HDD2PYMCgf5lTI">
+                <p><span class="amount">$100</span><span class="small text-secondary">USD</span></p>
+                <p class="small text-secondary">One-time donation</p>
+              </div>
+            </div>
+            <div class="col-6 mt-4">
+              <div class="py-3 adventech-donate-button"
+                   id="sku_HU9DpA8gRX4DMs">
+                <p><span class="amount">$200</span><span class="small text-secondary">USD</span></p>
+                <p class="small text-secondary">One-time donation</p>
+              </div>
+            </div>
+            <div class="col-6 mt-4">
+              <div class="py-3 adventech-donate-button"
+                   id="price_1GvAqqFYbMjl8cVxuWh7XYnP">
+                <p><span class="amount">$5</span><span class="small text-secondary">USD</span></p>
+                <p class="small text-secondary"><strong class="text-primary">Monthly</strong> donation</p>
+              </div>
+            </div>
+            <div class="col-6 mt-4">
+              <div class="py-3 adventech-donate-button"
+                   id="plan_HDD3ukXRzJUB46">
+                <p><span class="amount">$10</span><span class="small text-secondary">USD</span></p>
+                <p class="small text-secondary"><strong class="text-primary">Monthly</strong> donation</p>
+              </div>
+            </div>
+            <div class="col-6 mt-4">
+              <div class="py-3 adventech-donate-button"
+                   id="plan_HDE8TKrHo5jzpn">
+                <p><span class="amount">$25</span><span class="small text-secondary">USD</span></p>
+                <p class="small text-secondary"><strong class="text-primary">Monthly</strong> donation</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-3 font-italic">Dear brothers and sisters, we have not yet obtained charitable organization status for Adventech thus can not provide tax receipts.</p>
+          <p class="font-italic">We are currently working on getting listed on the <span class="text-primary">AdventistGiving</span> website. Please reach out to us directly to learn more: <a href="mailto:contact@adventech.io">contact@adventech.io</a></p>
+
+          <script>
+            (function() {
+              var stripe = Stripe('pk_live_DLK9BZOJyv60jyy5ZaRfbuIf00oVk0q1nT');
+              var checkoutButtons = document.getElementsByClassName('adventech-donate-button');
+
+              for (var i = 0; i < checkoutButtons.length; i++) {
+                var checkoutButton = checkoutButtons[i];
+                checkoutButton.addEventListener('click', function () {
+                  var sku = this.getAttribute("id");
+                  // When the customer clicks on the button, redirect
+                  // them to Checkout.
+
+                  var item = {quantity: 1};
+
+                  if (sku.indexOf("sku") === 0) {
+                    item.sku = sku
+                  } else {
+                    item.plan = sku
+                  }
+
+                  stripe.redirectToCheckout({
+                    items: [item],
+                    successUrl: 'https://adventech.io/donate/?thank-you',
+                    cancelUrl: 'https://adventech.io/donate/',
+                  })
+                    .then(function (result) {
+                      if (result.error) {
+                        var displayError = document.getElementById('error-message');
+                        displayError.textContent = result.error.message;
+                      }
+                    });
+                });
+              }
+            })();
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer bg-dark text-light p-4 p-md-3">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-9 py-4 p-md-3">
+        <p>Made with ♥ by Adventech</p>
+
+        <p class="my-0 text-secondary">All contributors are members of the Seventh-day Adventist Church. We have partnered with the General Conference of Seventh-day Adventists Sabbath School and Personal Ministries Department.</p>
+      </div>
+      <div class="col-md-3 mt-5 mt-md-0">
+        <div class="container">
+          <div class="row justify-content-center justify-content-md-end">
+            <div class="col-2 col-md-3 text-center">
+              <a href="https://instagram.com/adventech" target="_blank"><img src="/images/adventech-social-instagram.png" /></a>
+            </div>
+            <div class="col-2 col-md-3 text-center">
+              <a href="https://facebook.com/shabbatschool" target="_blank"><img src="/images/adventech-social-facebook.png" /></a>
+            </div>
+            <div class="col-2 col-md-3 text-center">
+              <a href="https://github.com/Adventech" target="_blank"><img src="/images/adventech-social-github.png" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
