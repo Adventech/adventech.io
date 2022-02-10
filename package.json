@@ -21,7 +21,7 @@
     "bootstrap": "^4.0.0-beta.2"
   },
   "devDependencies": {
-    "node-sass": "^4.13",
+    "node-sass": "^7.0",
     "tiny-server": "^1.0.2"
   }
 }
