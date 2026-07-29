@@ -1,0 +1,40 @@
+name: Repository hygiene
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: repository-hygiene-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tracked-dependency-output:
+    name: Reject tracked dependency output
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Assert dependency output is untracked
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mapfile -d '' tracked_files < <(git ls-files -z -- ':(glob)**/node_modules/**')
+
+          if (( ${#tracked_files[@]} > 0 )); then
+            printf '::error::Dependency output must not be committed. Remove these tracked files:\n'
+            printf ' - %q\n' "${tracked_files[@]}"
+            exit 1
+          fi
+
+          printf 'Repository hygiene assertion: PASS\n'
